@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Automation Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">D</span><div><b>DevOps Dashboard</b><small>LOCAL AUTOMATION</small></div></div>
+    <nav><a class="active" href="/">Overview</a><a href="#pipeline">CI/CD Pipeline</a><a href="#about">About Project</a></nav>
+    <div class="side-note">Beginner project<br>Docker · Node.js · GitHub Actions</div>
+  </aside>
+
+  <main class="main">
+    <header>
+      <div><p class="eyebrow">PROJECT OVERVIEW</p><h1>Deployment Dashboard</h1><p class="muted">Monitor your local application and understand its DevOps pipeline.</p></div>
+      <button id="refreshBtn">↻ Refresh status</button>
+    </header>
+
+    <section class="summary">
+      <article class="card status-card"><div class="card-label">APPLICATION STATUS</div><div class="big-status"><span id="statusDot" class="dot"></span><strong id="appStatus">Checking...</strong></div><p id="lastChecked" class="muted small">Waiting for API</p></article>
+      <article class="card"><div class="card-label">UPTIME</div><div id="uptime" class="metric">--</div><p class="muted small">Since application started</p></article>
+      <article class="card"><div class="card-label">MEMORY USED</div><div id="memory" class="metric">--</div><div class="meter"><span id="memoryBar"></span></div></article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="section-head"><div><p class="eyebrow">RUNTIME DETAILS</p><h2>Environment</h2></div><span class="pill">LOCAL</span></div>
+        <dl><div><dt>Service</dt><dd id="service">--</dd></div><div><dt>Hostname</dt><dd id="hostname">--</dd></div><div><dt>Platform</dt><dd id="platform">--</dd></div><div><dt>Node.js</dt><dd id="nodeVersion">--</dd></div></dl>
+      </article>
+      <article class="card" id="pipeline">
+        <div class="section-head"><div><p class="eyebrow">AUTOMATION</p><h2>CI/CD Pipeline</h2></div><span class="pill blue">4 STAGES</span></div>
+        <div id="pipelineStages" class="stages"><p class="muted">Loading pipeline...</p></div>
+      </article>
+    </section>
+
+    <section class="card about" id="about">
+      <p class="eyebrow">WHAT THIS PROJECT DEMONSTRATES</p><h2>Learn DevOps by doing</h2>
+      <div class="learn-grid"><div><b>01 · Containerization</b><p>Package the Node.js app into a Docker image.</p></div><div><b>02 · Orchestration</b><p>Run and health-check the app using Docker Compose.</p></div><div><b>03 · CI Automation</b><p>GitHub Actions installs dependencies, runs tests and builds the image.</p></div></div>
+    </section>
+    <footer>DevOps Automation Dashboard · Beginner learning project</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
